@@ -59,7 +59,7 @@ CREATE TABLE `tickets` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (1,'Things','A104','blah',NULL,'2020-04-15',NULL,NULL,'2020-04-15 08:18:10','2020-04-15 08:18:10'),(2,'New Ticket Hype','B100','This is a bug ticket','Austin Nieset','2020-04-15',NULL,'open','2020-04-15 08:31:27','2020-04-15 08:31:27');
+INSERT INTO `tickets` VALUES (7,'Test Ticket','A100','This is a new test ticket. It shows a ticket with all fields filled','Project Manager','2020-04-15',NULL,'open','2020-04-15 20:56:18','2020-04-15 20:56:18'),(8,'Dragon Ball Z','9001','Its over 9000. I promise','Vegeta','2020-04-14','2020-04-15','closed','2020-04-15 20:56:59','2020-04-15 20:56:59');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-15  0:49:26
+-- Dump completed on 2020-04-15 12:58:39
