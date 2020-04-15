@@ -29,7 +29,8 @@ npm install
 
 Add database connection to the `.env` file.
 
-Navigate to `localhost:PORT/ticket` where port is the port the application is running on. This brings up the list view of tickets
+Navigate to `localhost:PORT/ticket` where port is the port the application is running on. This brings up the list view of tickets.
+From there the user can create a new ticket from the button on top, and  from the the list view the user can edit, delete, or view a ticket.
 
 #### NOTE
 Make sure your mysql server is running as well as php-fpm as these are required for the application.
