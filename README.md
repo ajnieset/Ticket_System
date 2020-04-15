@@ -17,7 +17,10 @@ Clone the repo and place in the `/var/www/` folder to run with nginx and start t
 ```
 sudo service nginx start
 ```
-Otherwise clone the repo and run `php artisan serve` to locally serve up the application
+Otherwise clone the repo and run the command below to locally serve up the application
+```
+php artisan serve
+```
 
 Install the node dependencies required for the front end
 ```
