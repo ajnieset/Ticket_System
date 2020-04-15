@@ -14,7 +14,11 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        //collect all tickets
+        $tickets = Ticket::all();
+
+        //serve the view with showing all tickets
+        return view('ticket.index', compact('tickets'));
     }
 
     /**
@@ -47,8 +51,8 @@ class TicketController extends Controller
         //create the ticket
         Ticket::create($request->all());
 
-        //redirect back on success
-        return back()
+        //redirect to the list view on success
+        return redirect('ticket')
         ->with('success', 'Ticket Created');
     }
 
@@ -60,11 +64,11 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //collect all tickets
-        $tickets = Ticket::all();
+        //find the ticket by the id
+        $ticket = Ticket::find($id);
 
-        //serve the view with showing all tickets
-        return view('ticket.index', compact('tickets'));
+        //return single card view of the ticket
+        return view('ticket/show', compact('ticket'));
     }
 
     /**
@@ -98,7 +102,14 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
+        //find the ticket
+        $ticket = Ticket::findOrFail($id);
+
         //delete the tickets
         $ticket->delete();
+
+        //redirect with a success message
+        return redirect('ticket')
+        ->with('success', 'Ticket Successfully Deleted');
     }
 }
