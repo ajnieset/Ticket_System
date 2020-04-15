@@ -23,7 +23,8 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        //return the create view
+        return view('ticket.create');
     }
 
     /**
@@ -79,6 +80,7 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //delete the tickets
+        $ticket->delete();
     }
 }

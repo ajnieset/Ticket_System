@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('tickets', 'TicketController');
+Route::resource('ticket', 'TicketController');
