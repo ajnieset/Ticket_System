@@ -4,6 +4,7 @@
 <div class="container mt-3">
     <div class="col-xl-10  m-auto">
         <form action="{{ route('ticket.store') }}" method="post">
+        @csrf
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title text-primary"> Create Ticket </h4>
@@ -69,7 +70,6 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-success" name="submit"> <i class="fas fa-caret-square-up"></i> Create Ticket </button>
                     </div>
-                    {{ csrf_field() }}
                 </div>
             </div>
         </form>

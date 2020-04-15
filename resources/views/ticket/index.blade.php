@@ -35,9 +35,9 @@
                     <a href="{{ route('ticket.show', $ticket->id )}}" class="badge badge-info p-2 mb-2"> View </a>
                     <a href="{{ route('ticket.edit', $ticket->id )}}" class="badge badge-warning p-2 mb-2"> Edit </a>
                     <form action="{{ route('ticket.destroy', $ticket->id)}}" method="post">
-                    {{ csrf_field() }}
+                    @csrf
                     @method('DELETE')
-                        <a class="badge btn-danger p-2" type="submit"> Delete </a>
+                        <button class="badge btn-danger p-2" type="submit"> Delete </button>
                    </form>
                 </td>
             </tr>
