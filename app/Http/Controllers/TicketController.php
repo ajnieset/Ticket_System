@@ -45,7 +45,10 @@ class TicketController extends Controller
             'title'=>'required',
             'ticket_number'=>'required',
             'description'=>'required',
+            'assigned'=>'nullable',
             'created_date'=>'required',
+            'completed_date'=>'nullable|date',
+            'status'=>'nullable',
         ]);
 
         //create the ticket
@@ -79,7 +82,11 @@ class TicketController extends Controller
      */
     public function edit($id)
     {
-        //
+        //find the ticket by the id
+        $ticket = Ticket::find($id);
+
+        //return single card view to edit the ticket
+        return view('ticket/update', compact('ticket'));
     }
 
     /**
@@ -91,7 +98,23 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //required fields
+        $ticket = $request->validate([
+            'title'=>'required',
+            'ticket_number'=>'required',
+            'description'=>'required',
+            'assigned'=>'nullable',
+            'created_date'=>'required',
+            'completed_date'=>'nullable|date',
+            'status'=>'nullable',
+        ]);
+
+        //update selected ticket the ticket
+        Ticket::where('id', $id)->update($ticket);
+
+        //redirect to the list view on success
+        return redirect('ticket')
+        ->with('success', 'Ticket Successfully Updated');
     }
 
     /**
@@ -103,7 +126,7 @@ class TicketController extends Controller
     public function destroy($id)
     {
         //find the ticket
-        $ticket = Ticket::findOrFail($id);
+        $ticket = Ticket::find($id);
 
         //delete the tickets
         $ticket->delete();
