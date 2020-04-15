@@ -18,10 +18,10 @@ class CreateTicketsTable extends Migration
             $table->string('title');
             $table->string('ticket_number');
             $table->text('description');
-            $table->string('assigned');
+            $table->string('assigned')->nullable();
             $table->date('created_date');
-            $table->date('completed_date');
-            $table->string('status');
+            $table->date('completed_date')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
