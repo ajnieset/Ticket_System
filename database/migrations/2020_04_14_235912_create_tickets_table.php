@@ -16,11 +16,11 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('number');
+            $table->string('ticket_number');
             $table->text('description');
             $table->string('assigned');
-            $table->date('date_created_date');
-            $table->date('date_completed');
+            $table->date('created_date');
+            $table->date('completed_date');
             $table->string('status');
             $table->timestamps();
         });
